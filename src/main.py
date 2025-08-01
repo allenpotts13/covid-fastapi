@@ -9,6 +9,7 @@ app = FastAPI(
 # Include routers
 app.include_router(us_covid.router, prefix="/api/v1", tags=["US COVID Data"])
 app.include_router(ca_covid.router, prefix="/api/v1", tags=["Canada COVID Data"])
+app.include_router(ukhsa_vax.router, prefix="/api/v1", tags=["UKHSA COVID Vax Data"])
 
 
 @app.on_event("startup")
