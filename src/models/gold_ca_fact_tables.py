@@ -4,9 +4,11 @@ from sqlmodel import SQLModel, Field, Column, DateTime
 
 
 class gold_fact_ca_demand(SQLModel, table=True):
-    __tablename__ = "fact_ca_demand"
+    __tablename__ = "FACT_CA_DEMAND"
 
-    ID: Optional[int] = Field(default=None, description="Unique identifier")
+    ID: Optional[int] = Field(
+        default=None, primary_key=True, description="Unique identifier"
+    )
     REF_DATE: Optional[str] = Field(
         default=None, description="Reference date (e.g., 2022-01)"
     )
@@ -17,13 +19,13 @@ class gold_fact_ca_demand(SQLModel, table=True):
         default=None, description="Detailed geographic unique identifier"
     )
 
-    NAICS_NAME: Optional[str] = Field(
+    NAICS: Optional[str] = Field(
         default=None,
-        alias="NORTH_AMERICAN_INDUSTRY_CLASSIFICATION_SYSTEM_(NAICS)",
+        sa_column=Column("NORTH_AMERICAN_INDUSTRY_CLASSIFICATION_SYSTEM_(NAICS)"),
         description="Industry name based on North American Industry Classification System (NAICS)",
     )
 
-    DEMAND_USAGE_DESC: Optional[str] = Field(
+    COVID_19_RAPID_TEST_KITS_DEMAND_AND_USAGE: Optional[str] = Field(
         default=None,
         alias="COVID_19_RAPID_TEST_KITS_DEMAND_AND_USAGE",
         description="Description of rapid test kit demand and usage",
@@ -52,10 +54,10 @@ class gold_fact_ca_demand(SQLModel, table=True):
 
 
 class gold_fact_ca_antibody(SQLModel, table=True):
-    __tablename__ = "fact_ca_antibody"
+    __tablename__ = "FACT_CA_ANTIBODY"
 
     ID: Optional[int] = Field(
-        default=None, description="Unique identifier for the record"
+        default=None, primary_key=True, description="Unique identifier for the record"
     )
     REF_DATE: Optional[int] = Field(
         default=None, description="Reference date as numeric code (e.g., YYYYMM)"
