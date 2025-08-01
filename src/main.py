@@ -1,11 +1,11 @@
 from fastapi import FastAPI
 from src.database import init_database, create_db_and_tables
-from src.routers import covid
+from src.routers import us_covid
 
 app = FastAPI(title="COVID Data API", description="API for COVID-19 data", version="1.0.0")
 
 # Include routers
-app.include_router(covid.router, prefix="/api/v1", tags=["US COVID Data"])
+app.include_router(us_covid.router, prefix="/api/v1", tags=["US COVID Data"])
 
 @app.on_event("startup")
 def on_startup():
