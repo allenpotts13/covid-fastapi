@@ -1,0 +1,173 @@
+@import url('https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui.css');
+
+/* Set dark background for html and body to match Swagger UI dark theme */
+body {
+  /* Subtle COVID-themed background image with dark overlay and fallback color */
+  background:
+    linear-gradient(rgba(24,26,32,0.92), rgba(24,26,32,0.92)),
+    url('https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=1200&q=80')
+    #181a20;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #f5f6fa !important;
+}
+
+/* Make Swagger UI containers transparent to reveal background image */
+.swagger-ui, #swagger-ui {
+  background: transparent !important;
+}
+.swagger-ui .wrapper {
+  background: rgba(35, 39, 47, 0.75) !important;
+  color: #f5f6fa !important;
+  box-shadow: 0 4px 32px 0 #181a20cc;
+}
+.swagger-ui .info {
+  background: rgba(35, 39, 47, 0.75) !important;
+  color: #f5f6fa !important;
+  box-shadow: 0 2px 16px 0 #181a2099;
+}
+
+/* Minimal color tweaks for Swagger UI, no layout or background overrides */
+.swagger-ui .topbar {
+  background: #1a73e8 !important;
+  border-bottom: 2px solid #1565c0;
+}
+.swagger-ui .btn {
+  background: #1a73e8 !important;
+  color: #fff !important;
+}
+.swagger-ui .btn:hover {
+  background: #1565c0 !important;
+}
+.swagger-ui a {
+  color: #1a73e8 !important;
+}
+.swagger-ui a:hover {
+  color: #1565c0 !important;
+}
+/* Darker background for main area and info section */
+/* Make wrapper and info backgrounds semi-transparent to reveal background image */
+.swagger-ui .wrapper {
+  background: rgba(35, 39, 47, 0.85) !important;
+  color: #f5f6fa !important;
+  box-shadow: 0 4px 32px 0 #181a20cc;
+}
+.swagger-ui .info {
+  background: rgba(35, 39, 47, 0.85) !important;
+  color: #f5f6fa !important;
+  box-shadow: 0 2px 16px 0 #181a2099;
+}
+/* Brighten API title and description in info section */
+.swagger-ui .info .title,
+.swagger-ui .info .description,
+.swagger-ui .info p,
+.swagger-ui .info .base-url,
+.swagger-ui .info hgroup > p {
+  color: #64b5f6 !important;
+  font-weight: 600 !important;
+}
+
+/* Soften opblock and response backgrounds */
+.swagger-ui .opblock {
+  background: #262b36 !important;
+  border-radius: 8px;
+  border: 1px solid #2e3440 !important;
+}
+.swagger-ui .opblock-section-header,
+.swagger-ui .responses-inner {
+  background: #23272f !important;
+  color: #f5f6fa !important;
+}
+.swagger-ui .model-box {
+  background: #23272f !important;
+  color: #f5f6fa !important;
+}
+/* Make operation description text blue to match section header */
+.swagger-ui .opblock-description-wrapper,
+.swagger-ui .opblock-description {
+  color: #64b5f6 !important;
+  font-weight: 500 !important;
+}
+/* Force operation summary description text to be bright blue */
+.swagger-ui .opblock .opblock-summary-description {
+  color: #64b5f6 !important;
+  font-weight: 500 !important;
+}
+/* Brighten Parameters section text for readability */
+.swagger-ui .parameters-col_name,
+.swagger-ui .parameters-col_description,
+.swagger-ui .parameter__name,
+.swagger-ui .parameter__type,
+.swagger-ui .parameter__in,
+.swagger-ui .parameter__default {
+  color: #e3eaf3 !important;
+}
+.swagger-ui .parameter__default {
+  font-style: italic !important;
+  color: #90caf9 !important;
+}
+.swagger-ui .parameter__enum {
+  color: #ffd54f !important;
+}
+/* Enhance Parameters section readability */
+.swagger-ui .parameters {
+  background: #23272f !important;
+  border-radius: 8px;
+  border: 1px solid #374151 !important;
+  box-shadow: 0 2px 8px 0 #181a20cc;
+}
+.swagger-ui .parameters tr {
+  background: #262b36 !important;
+}
+.swagger-ui .parameters-col_name,
+.swagger-ui .parameter__name {
+  font-size: 1.08em !important;
+  font-weight: 600 !important;
+  color: #e3eaf3 !important;
+}
+.swagger-ui .parameters-col_description,
+.swagger-ui .parameter__description {
+  font-size: 1.05em !important;
+  font-weight: 500 !important;
+  color: #b3c0d1 !important;
+}
+/* Brighten operation description under endpoint summary */
+.swagger-ui .opblock .opblock-summary-description,
+.swagger-ui .opblock .opblock-description-wrapper,
+.swagger-ui .opblock .opblock-description,
+.swagger-ui .opblock .markdown p,
+.swagger-ui .opblock .markdown {
+  color: #64b5f6 !important;
+  font-weight: 500 !important;
+}
+/* Force operation description (markdown/renderedMarkdown) to be bright blue */
+.swagger-ui .opblock .markdown,
+.swagger-ui .opblock .markdown *,
+.swagger-ui .opblock .renderedMarkdown,
+.swagger-ui .opblock .renderedMarkdown *,
+.swagger-ui .opblock-description-wrapper,
+.swagger-ui .opblock-description-wrapper *,
+.swagger-ui .opblock-description,
+.swagger-ui .opblock-description * {
+  color: #64b5f6 !important;
+  font-weight: 500 !important;
+}
+/* Brighten section headers like Parameters, Responses, Code */
+.swagger-ui .parameters-title,
+.swagger-ui .responses-title,
+.swagger-ui .opblock-section-header,
+.swagger-ui .response-col_status,
+.swagger-ui .response-col_description,
+.swagger-ui .tab li,
+.swagger-ui .tab li span,
+.swagger-ui .opblock .opblock-section-header h4,
+.swagger-ui .opblock .opblock-section-header h3 {
+  color: #e3eaf3 !important;
+  font-weight: 600 !important;
+}
+.swagger-ui .response-col_status {
+  background: #23272f !important;
+  border-radius: 4px;
+}
+
