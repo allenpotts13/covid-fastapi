@@ -53,6 +53,13 @@ class gold_fact_ca_demand(SQLModel, table=True):
     FILENAME: Optional[str] = Field(default=None, description="Source CSV filename")
 
 
+class on_site_test_usage(SQLModel, table=False):
+    GEO: str
+    NAICS: str
+    COVID_19_RAPID_TEST_KITS_DEMAND_AND_USAGE: str
+    AVERAGE_PERCENTAGE: float
+
+
 class gold_fact_ca_antibody(SQLModel, table=True):
     __tablename__ = "FACT_CA_ANTIBODY"
 
@@ -123,3 +130,10 @@ class gold_fact_ca_antibody(SQLModel, table=True):
     FILENAME: Optional[str] = Field(
         default=None, description="Source file name from which the data was ingested"
     )
+
+
+class antibody_by_age_group(SQLModel, table=False):
+    REF_DATE: int
+    AGE_GROUP: str
+    MEASURE: str
+    AVERAGE_PERCENTAGE: float

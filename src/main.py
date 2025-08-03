@@ -6,20 +6,28 @@ from fastapi.openapi.docs import get_swagger_ui_html
 from fastapi.staticfiles import StaticFiles
 
 
-app = FastAPI(title="COVID Data API", description="API for COVID-19 data", version="1.0.0", docs_url=None)
+app = FastAPI(
+    title="COVID Data API",
+    description="API for COVID-19 data",
+    version="1.0.0",
+    docs_url=None,
+)
 app.mount("/static", StaticFiles(directory="static"), name="static")
+
+
 @app.get("/docs", include_in_schema=False)
 async def custom_swagger_ui_html():
     return get_swagger_ui_html(
         openapi_url=app.openapi_url,
         title=app.title + " - Swagger UI",
-        swagger_css_url="/static/custom-swagger.css"
+        swagger_css_url="/static/custom-swagger.css",
     )
+
 
 # Include routers
 app.include_router(us_covid.router, prefix="/api/v1", tags=["US COVID Data"])
 app.include_router(ukhsa_vax.router, prefix="/api/v1", tags=["UKHSA COVID Vax Data"])
-app.include_router(ca_covid.router, prefix="/api/v1", tags=["Canada COVID Data"])   
+app.include_router(ca_covid.router, prefix="/api/v1", tags=["Canada COVID Data"])
 
 
 @app.on_event("startup")
@@ -46,6 +54,8 @@ async def root():
         "canada_endpoints": {
             "ca_demand_data": "/api/v1/ca/demand/",
             "ca_antibody_data": "/api/v1/ca/antibody/",
+            "ca_demand_onsite_test_usage": "/api/v1/ca/demand/onsite_test_usage/",
+            "ca_antibody_by_age_group": "/api/v1/ca/antibody/age_group/",
         },
         "ukhsa_endpoints": {
             "all_vaccination_data": "/api/v1/UKHSA",
